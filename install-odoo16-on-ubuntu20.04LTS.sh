@@ -51,7 +51,8 @@ sudo runuser -l odoo16 -c 'source odoo-venv/bin/activate'
 #pip3 install wheel 
 #pip3 install -r odoo/requirements.txt
 sudo runuser -l odoo16 -c 'pip3 install wheel'
-sudo runuser -l odoo16 -c 'pip3 install -r odoo/requirements.txt'
+sudo runuser -l odoo16 -c 'cd /'
+sudo runuser -l odoo16 -c 'pip3 install -r /opt/odoo16/odoo/requirements.txt'
 
 # run it
 #cd /opt/odoo16/odoo

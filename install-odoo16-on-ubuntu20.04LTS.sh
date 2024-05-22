@@ -1,7 +1,7 @@
 #!/bin/sh
 # installing odoo env dev
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 
 sudo apt install postgresql -y
 sudo apt install postgresql-server-dev-12 -y 

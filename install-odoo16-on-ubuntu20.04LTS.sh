@@ -57,7 +57,8 @@ sudo runuser -l odoo16 -c 'pip3 install -r odoo/requirements.txt'
 #cd /opt/odoo16/odoo
 #ls
 #./odoo-bin
-sudo runuser -l odoo16 -c 'cd /opt/odoo16/odoo'
-sudo runuser -l odoo16 -c 'ls'
-sudo runuser -l odoo16 -c './odoo-bin'
+#sudo runuser -l odoo16 -c 'cd /opt/odoo16/odoo'
+#sudo runuser -l odoo16 -c 'ls'
+#sudo runuser -l odoo16 -c './odoo-bin'
+sudo runuser -l odoo16 -c '/opt/odoo16/odoo/odoo-bin'
 

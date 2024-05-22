@@ -32,6 +32,8 @@ sudo rm -rf /etc/nginx/sites-enabled/default
 sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo.conf -P /etc/nginx/sites-available
 sudo ln -s /etc/nginx/sites-available/odoo.conf /etc/nginx/sites-enabled/odoo.conf
 sudo nginx -t
+sudo service nginx stop
+sudo service nginx start
 
 # create user
 sudo useradd -m -d /opt/odoo16 -U -r -s /bin/bash odoo16

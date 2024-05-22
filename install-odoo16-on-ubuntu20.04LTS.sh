@@ -1,3 +1,4 @@
+#!/bin/sh
 # installing odoo env dev
 sudo apt update
 sudo apt upgrade

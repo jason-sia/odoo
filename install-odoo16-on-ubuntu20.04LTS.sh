@@ -27,6 +27,8 @@ sudo pg_ctlcluster 12 main start
 
 #nginx
 sudo apt install nginx -y 
+rm -rf /etc/nginx/sites-available/default
+rm -rf /etc/nginx/sites-enabled/default
 
 # create user
 sudo useradd -m -d /opt/odoo16 -U -r -s /bin/bash odoo16

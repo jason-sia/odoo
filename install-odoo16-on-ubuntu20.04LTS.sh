@@ -33,19 +33,31 @@ sudo su - postgres -c "createuser -s odoo16"
 sudo wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.focal_amd64.deb
 sudo apt install ./wkhtmltox_0.12.5-1.focal_amd64.deb -y
 
-sudo su - odoo16
-git clone https://www.github.com/odoo/odoo --depth 1 --branch 16.0 /opt/odoo16/odoo
+#sudo su - odoo16
+#git clone https://www.github.com/odoo/odoo --depth 1 --branch 16.0 /opt/odoo16/odoo
+sudo runuser -l odoo16 -c 'ls -l'
+sudo runuser -l odoo16 -c 'git clone https://www.github.com/odoo/odoo --depth 1 --branch 16.0 /opt/odoo16/odoo'
 
+ 
 # create virtual environment
-cd /opt/odoo16 
-python3 -m venv odoo-venv
+#cd /opt/odoo16 
+#python3 -m venv odoo-venv
+sudo runuser -l odoo16 -c 'cd /opt/odoo16'
+sudo runuser -l odoo16 -c 'python3 -m venv odoo-venv'
 
-source odoo-venv/bin/activate
+#source odoo-venv/bin/activate
+sudo runuser -l odoo16 -c 'source odoo-venv/bin/activate'
 
-pip3 install wheel 
-pip3 install -r odoo/requirements.txt
+#pip3 install wheel 
+#pip3 install -r odoo/requirements.txt
+sudo runuser -l odoo16 -c 'pip3 install wheel'
+sudo runuser -l odoo16 -c 'pip3 install -r odoo/requirements.txt'
 
 # run it
-cd /opt/odoo16/odoo
-ls
-./odoo-bin
+#cd /opt/odoo16/odoo
+#ls
+#./odoo-bin
+sudo runuser -l odoo16 -c 'cd /opt/odoo16/odoo'
+sudo runuser -l odoo16 -c 'ls'
+sudo runuser -l odoo16 -c './odoo-bin'
+

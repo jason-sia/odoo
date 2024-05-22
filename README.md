@@ -2,6 +2,7 @@
 Odoo installation scripts
 
 Minimum system requirements: 1 GB RAM, 2 vCPUs, 40 GB SSD
+OS: Ubuntu 20.04 LTS
 
 one command (duration: 15mins)
 

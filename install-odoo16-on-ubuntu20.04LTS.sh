@@ -25,6 +25,9 @@ sudo apt install nodeless -y
 sudo apt install libjpeg-dev -y 
 sudo pg_ctlcluster 12 main start
 
+#nginx
+sudo apt install nginx -y 
+
 # create user
 sudo useradd -m -d /opt/odoo16 -U -r -s /bin/bash odoo16
 sudo su - postgres -c "createuser -s odoo16"

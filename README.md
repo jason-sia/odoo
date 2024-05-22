@@ -1,0 +1,2 @@
+# odoo
+Odoo installation scripts

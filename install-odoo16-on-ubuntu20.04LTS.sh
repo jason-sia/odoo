@@ -71,14 +71,22 @@ sudo runuser -l odoo16 -c 'source /opt/odoo16/odoo-venv/bin/activate'
 
 #pip3 install wheel 
 #pip3 install -r odoo/requirements.txt
+#sudo apt-get install python3-pypdf2 -y
+#sudo runuser -l odoo16 -c 'pip3 install python3-pypdf2'
 sudo runuser -l odoo16 -c 'pip3 install wheel'
 sudo runuser -l odoo16 -c 'cd /'
 sudo runuser -l odoo16 -c 'pip3 install -r /opt/odoo16/odoo/requirements.txt'
+sudo runuser -l odoo16 -c 'pip install PyPDF2'
+# sudo pip install PyPDF2
 
 #sudo runuser -l odoo16 -c 'mkdir /opt/odoo16/odoo-venv/log'
 #sudo runuser -l odoo16 -c 'mkdir /opt/odoo16/odoo-venv/custom'
 #sudo runuser -l odoo16 -c 'mkdir /opt/odoo16/odoo-venv/custom/addons'
 #sudo runuser -l odoo16 -c 'wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo16.conf -P /etc'
+
+#sudo apt-get install python-pypdf2 -y
+#sudo apt-get install python3-pypdf2 -y
+
  
 sudo mkdir /opt/odoo16/odoo-custom-addons
 
@@ -94,7 +102,8 @@ sudo mkdir /opt/odoo16/odoo-custom-addons
 # run the servers
 sudo service nginx stop
 sudo service nginx start
-sudo runuser -l odoo16 -c '/opt/odoo16/odoo/odoo-bin  -c /etc/odoo16.conf' 
+sudo runuser -l odoo16 -c '/opt/odoo16/odoo/odoo-bin  -c /etc/odoo16.conf -d odoo_db' 
+#sudo runuser -l odoo16 -c '/opt/odoo16/odoo/odoo-bin -d odoo_db --init=all --load-language=en_US --without-demo=all --db-filter=^odoo_db$ --save' 
 
 #./odoo-bin -c /etc/odoo-server.conf
 

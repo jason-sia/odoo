@@ -36,8 +36,9 @@ sudo nginx -t
 sudo service nginx stop
 sudo service nginx start
 
-# create odoo config file
+# setup odoo config 
 sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo16.conf -P /etc
+sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo16.service -P /etc/systemd/system
 
 
 # create user

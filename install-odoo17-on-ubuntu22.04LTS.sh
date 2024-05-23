@@ -47,7 +47,7 @@ sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo17.conf -P /
 #sudo systemctl status odoo17
 
 # create user
-sudo useradd -m -d /opt/odoo16 -U -r -s /bin/bash odoo17
+sudo useradd -m -d /opt/odoo17 -U -r -s /bin/bash odoo17
 sudo su - postgres -c "createuser -s odoo17"
 
 # install html to pdf converter
@@ -67,7 +67,7 @@ sudo runuser -l odoo17 -c 'cd /opt/odoo17'
 sudo runuser -l odoo17 -c 'python3 -m venv odoo-venv'
 
 #source odoo-venv/bin/activate
-sudo runuser -l odoo16 -c 'source /opt/odoo16/odoo-venv/bin/activate'
+sudo runuser -l odoo17 -c 'source /opt/odoo17/odoo-venv/bin/activate'
 
 #pip3 install wheel 
 #pip3 install -r odoo/requirements.txt
@@ -75,7 +75,7 @@ sudo runuser -l odoo16 -c 'source /opt/odoo16/odoo-venv/bin/activate'
 #sudo runuser -l odoo17 -c 'pip3 install python3-pypdf2'
 sudo runuser -l odoo17 -c 'pip3 install wheel'
 sudo runuser -l odoo17 -c 'cd /'
-sudo runuser -l odoo17 -c 'pip3 install -r /opt/odoo16/odoo/requirements.txt'
+sudo runuser -l odoo17 -c 'pip3 install -r /opt/odoo17/odoo/requirements.txt'
 sudo runuser -l odoo17 -c 'pip install PyPDF2'
 # sudo pip install PyPDF2
 
@@ -103,6 +103,6 @@ sudo mkdir /opt/odoo17/odoo-custom-addons
 sudo service nginx stop
 sudo service nginx start
 sudo runuser -l odoo17 -c '/opt/odoo17/odoo/odoo-bin  -c /etc/odoo17.conf -d odoo_db' 
-#sudo runuser -l odoo17 -c '/opt/odoo16/odoo/odoo-bin -d odoo_db --init=all --load-language=en_US --without-demo=all --db-filter=^odoo_db$ --save' 
+#sudo runuser -l odoo17 -c '/opt/odoo17/odoo/odoo-bin -d odoo_db --init=all --load-language=en_US --without-demo=all --db-filter=^odoo_db$ --save' 
 
 #./odoo-bin -c /etc/odoo-server.conf

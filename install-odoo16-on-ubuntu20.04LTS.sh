@@ -67,7 +67,7 @@ sudo runuser -l odoo16 -c 'pip3 install -r /opt/odoo16/odoo/requirements.txt'
 sudo runuser -l odoo16 -c 'mkdir /opt/odoo16/odoo-venv/log'
 sudo runuser -l odoo16 -c 'mkdir /opt/odoo16/odoo-venv/custom'
 sudo runuser -l odoo16 -c 'mkdir /opt/odoo16/odoo-venv/custom/addons'
-sudo runuser -l odoo16 -c 'wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo.conf -P /etc/nginx/sites-available'
+sudo runuser -l odoo16 -c 'wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo-server.conf -P /opt/odoo16/odoo-venv'
  
 
 # run it

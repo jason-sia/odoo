@@ -26,6 +26,7 @@ sudo apt install libjpeg-dev -y
 sudo pg_ctlcluster 12 main start
 
 #nginx
+sudo apt-get install python-pypdf2 -y
 sudo apt install nginx -y 
 sudo rm -rf /etc/nginx/sites-available/default
 sudo rm -rf /etc/nginx/sites-enabled/default
@@ -56,7 +57,7 @@ sudo runuser -l odoo16 -c 'cd /opt/odoo16'
 sudo runuser -l odoo16 -c 'python3 -m venv odoo-venv'
 
 #source odoo-venv/bin/activate
-sudo runuser -l odoo16 -c 'source odoo-venv/bin/activate'
+sudo runuser -l odoo16 -c 'source /opt/odoo16/odoo-venv/bin/activate'
 
 #pip3 install wheel 
 #pip3 install -r odoo/requirements.txt

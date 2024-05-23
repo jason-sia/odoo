@@ -38,7 +38,6 @@ sudo nginx -t
 #sudo service nginx start
 
 # setup odoo config 
-sudo mkdir /opt/odoo16/odoo-custom-addons
 
 # create odoo service
 #sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo16.conf -P /etc
@@ -81,6 +80,7 @@ sudo runuser -l odoo16 -c 'pip3 install -r /opt/odoo16/odoo/requirements.txt'
 #sudo runuser -l odoo16 -c 'mkdir /opt/odoo16/odoo-venv/custom/addons'
 #sudo runuser -l odoo16 -c 'wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo16.conf -P /etc'
  
+sudo mkdir /opt/odoo16/odoo-custom-addons
 
 # run it
 #cd /opt/odoo16/odoo

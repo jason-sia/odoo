@@ -36,6 +36,10 @@ sudo nginx -t
 sudo service nginx stop
 sudo service nginx start
 
+# create odoo config file
+sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo16.conf -P /etc
+
+
 # create user
 sudo useradd -m -d /opt/odoo16 -U -r -s /bin/bash odoo16
 sudo su - postgres -c "createuser -s odoo16"
@@ -67,7 +71,7 @@ sudo runuser -l odoo16 -c 'pip3 install -r /opt/odoo16/odoo/requirements.txt'
 #sudo runuser -l odoo16 -c 'mkdir /opt/odoo16/odoo-venv/log'
 #sudo runuser -l odoo16 -c 'mkdir /opt/odoo16/odoo-venv/custom'
 #sudo runuser -l odoo16 -c 'mkdir /opt/odoo16/odoo-venv/custom/addons'
-sudo runuser -l odoo16 -c 'wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo16.conf -P /etc'
+#sudo runuser -l odoo16 -c 'wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo16.conf -P /etc'
  
 
 # run it

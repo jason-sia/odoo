@@ -15,4 +15,4 @@ sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/install-odoo16-o
 source /opt/odoo16/odoo-venv/bin/activate
 
 # Find port open
-sudo ss -lptn 'sport = :8069
+sudo ss -lptn 'sport = :8069'

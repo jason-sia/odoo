@@ -25,8 +25,8 @@ sudo apt install nodeless -y
 sudo apt install libjpeg-dev -y 
 sudo pg_ctlcluster 12 main start
 
-#nginx
-#sudo apt-get install python-pypdf2 -y
+#setup nginx
+sudo apt-get install python-pypdf2 -y
 sudo apt-get install python3-pypdf2 -y
 sudo apt install nginx -y 
 sudo rm -rf /etc/nginx/sites-available/default
@@ -34,16 +34,18 @@ sudo rm -rf /etc/nginx/sites-enabled/default
 sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo.conf -P /etc/nginx/sites-available
 sudo ln -s /etc/nginx/sites-available/odoo.conf /etc/nginx/sites-enabled/odoo.conf
 sudo nginx -t
-sudo service nginx stop
-sudo service nginx start
+#sudo service nginx stop
+#sudo service nginx start
 
 # setup odoo config 
 sudo mkdir /opt/odoo16/odoo-custom-addons
-sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo16.conf -P /etc
-sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo16.service -P /etc/systemd/system
-sudo systemctl daemon-reload
-sudo systemctl enable --now odoo16
-sudo systemctl status odoo16
+
+# create odoo service
+#sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo16.conf -P /etc
+#sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo16.service -P /etc/systemd/system
+#sudo systemctl daemon-reload
+#sudo systemctl enable --now odoo16
+#sudo systemctl status odoo16
 
 # create user
 sudo useradd -m -d /opt/odoo16 -U -r -s /bin/bash odoo16
@@ -73,6 +75,7 @@ sudo runuser -l odoo16 -c 'source /opt/odoo16/odoo-venv/bin/activate'
 sudo runuser -l odoo16 -c 'pip3 install wheel'
 sudo runuser -l odoo16 -c 'cd /'
 sudo runuser -l odoo16 -c 'pip3 install -r /opt/odoo16/odoo/requirements.txt'
+
 #sudo runuser -l odoo16 -c 'mkdir /opt/odoo16/odoo-venv/log'
 #sudo runuser -l odoo16 -c 'mkdir /opt/odoo16/odoo-venv/custom'
 #sudo runuser -l odoo16 -c 'mkdir /opt/odoo16/odoo-venv/custom/addons'
@@ -87,6 +90,10 @@ sudo runuser -l odoo16 -c 'pip3 install -r /opt/odoo16/odoo/requirements.txt'
 #sudo runuser -l odoo16 -c 'ls'
 #sudo runuser -l odoo16 -c './odoo-bin'
 #sudo runuser -l odoo16 -c '/opt/odoo16/odoo/odoo-bin'
+
+# run the servers
+sudo service nginx stop
+sudo service nginx start
 sudo runuser -l odoo16 -c '/opt/odoo16/odoo/odoo-bin  -c /etc/odoo16.conf' 
 
 #./odoo-bin -c /etc/odoo-server.conf

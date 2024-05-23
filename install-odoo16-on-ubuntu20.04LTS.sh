@@ -40,6 +40,8 @@ sudo service nginx start
 sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo16.conf -P /etc
 sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo16.service -P /etc/systemd/system
 sudo systemctl daemon-reload
+sudo systemctl enable --now odoo16
+sudo systemctl status odoo16
 
 # create user
 sudo useradd -m -d /opt/odoo16 -U -r -s /bin/bash odoo16

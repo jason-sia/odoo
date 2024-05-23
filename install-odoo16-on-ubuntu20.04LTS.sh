@@ -38,6 +38,7 @@ sudo service nginx stop
 sudo service nginx start
 
 # setup odoo config 
+sudo mkdir /opt/odoo16/odoo-custom-addons
 sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo16.conf -P /etc
 sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo16.service -P /etc/systemd/system
 sudo systemctl daemon-reload

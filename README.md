@@ -16,3 +16,7 @@ source /opt/odoo16/odoo-venv/bin/activate
 
 # Find port open
 sudo ss -lptn 'sport = :8069'
+
+# Access Logs
+tail -f -n 1000 /var/log/nginx/odoo.error.log
+tail -f -n 1000 /var/log/nginx/odoo.access.log

@@ -1,7 +1,7 @@
 #!/bin/sh
 # installing odoo env 17
 sudo apt update
-#sudo apt upgrade -y
+sudo apt upgrade -y
 
 sudo apt install -y postgresql
 

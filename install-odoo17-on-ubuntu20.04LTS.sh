@@ -83,7 +83,7 @@ sudo runuser -l odoo17 -c 'source /opt/odoo17/odoo-venv/bin/activate'
 sudo runuser -l odoo17 -c 'pip3 install wheel'
 sudo runuser -l odoo17 -c 'cd /'
 sudo runuser -l odoo17 -c 'pip3 install -r /opt/odoo17/odoo/requirements.txt'
-sudo runuser -l odoo17 -c 'pip install PyPDF2'
+sudo runuser -l odoo17 -c 'pip3 install PyPDF2'
 # sudo pip install PyPDF2
 
 #sudo runuser -l odoo17 -c 'mkdir /opt/odoo17/odoo-venv/log'
@@ -93,7 +93,7 @@ sudo runuser -l odoo17 -c 'pip install PyPDF2'
 
 #sudo apt-get install python-pypdf2 -y
 #sudo apt-get install python3-pypdf2 -y
-
+#sudo apt-get install python3.10-pypdf2 -y
  
 sudo mkdir /opt/odoo17/odoo-custom-addons
 

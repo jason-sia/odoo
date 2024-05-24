@@ -3,15 +3,19 @@
 sudo apt update
 sudo apt upgrade -y
 
-sudo apt install -y postgresql
+sudo apt install postgresql -y
+
 wget -O - https://nightly.odoo.com/odoo.key | sudo apt-key add -
 echo "deb http://nightly.odoo.com/17.0/nightly/deb/ ./" | sudo tee /etc/apt/sources.list.d/odoo.list
 sudo apt update
 
+#install odoo
+sudo apt install -y odoo
+
 # create odoo service /etc/systemd/system/odoo.service
-sudo adduser --system --home=/opt/odoo --group odoo
-sudo mkdir /etc/odoo
-sudo chown -R odoo:odoo /opt/odoo /etc/odoo
+#sudo adduser --system --home=/opt/odoo --group odoo
+#sudo mkdir /etc/odoo
+#sudo chown -R odoo:odoo /opt/odoo /etc/odoo
 
 sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo.service -P /etc/systemd/system
 sudo systemctl daemon-reload

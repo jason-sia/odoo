@@ -11,6 +11,8 @@ sudo apt update
 
 #install odoo
 sudo apt install -y odoo
+sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo17.conf -P /etc/odoo
+sudo mv /etc/odoo/odoo17.conf /etc/odoo/odoo.conf 
 
 # create odoo service /etc/systemd/system/odoo.service
 #sudo adduser --system --home=/opt/odoo --group odoo

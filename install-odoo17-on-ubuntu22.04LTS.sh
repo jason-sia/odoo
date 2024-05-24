@@ -1,9 +1,9 @@
 #!/bin/sh
 # installing odoo env 17
 sudo apt update
-sudo apt upgrade -y
+#sudo apt upgrade -y
 
-sudo apt install postgresql -y
+sudo apt install -y postgresql
 
 wget -O - https://nightly.odoo.com/odoo.key | sudo apt-key add -
 echo "deb http://nightly.odoo.com/17.0/nightly/deb/ ./" | sudo tee /etc/apt/sources.list.d/odoo.list

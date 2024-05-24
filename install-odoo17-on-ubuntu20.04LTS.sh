@@ -37,6 +37,13 @@ sudo nginx -t
 #sudo service nginx stop
 #sudo service nginx start
 
+#install Python 3.1
+sudo apt update
+sudo apt install -y software-properties-common
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install -y python3.10 python3.10-venv python3.10-dev
+
 # setup odoo config 
 sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo17.conf -P /etc
 
@@ -64,7 +71,7 @@ sudo runuser -l odoo17 -c 'git clone https://www.github.com/odoo/odoo --depth 1 
 #cd /opt/odoo17 
 #python3 -m venv odoo-venv
 sudo runuser -l odoo17 -c 'cd /opt/odoo17'
-sudo runuser -l odoo17 -c 'python3 -m venv odoo-venv'
+sudo runuser -l odoo17 -c 'python3.10 -m venv odoo-venv'
 
 #source odoo-venv/bin/activate
 sudo runuser -l odoo17 -c 'source /opt/odoo17/odoo-venv/bin/activate'

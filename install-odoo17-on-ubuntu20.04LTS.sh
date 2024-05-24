@@ -55,9 +55,9 @@ sudo wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wk
 sudo apt install ./wkhtmltox_0.12.5-1.focal_amd64.deb -y
 
 #sudo su - odoo17
-#git clone https://www.github.com/odoo/odoo --depth 1 --branch 16.0 /opt/odoo17/odoo
+#git clone https://www.github.com/odoo/odoo --depth 1 --branch 17.0 /opt/odoo17/odoo
 sudo runuser -l odoo17 -c 'ls -l'
-sudo runuser -l odoo17 -c 'git clone https://www.github.com/odoo/odoo --depth 1 --branch 16.0 /opt/odoo17/odoo'
+sudo runuser -l odoo17 -c 'git clone https://www.github.com/odoo/odoo --depth 1 --branch 17.0 /opt/odoo17/odoo'
 
  
 # create virtual environment

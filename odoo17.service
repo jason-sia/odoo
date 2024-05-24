@@ -1,0 +1,17 @@
+[Unit]
+Description=Odoo
+Documentation=http://www.odoo.com
+After=network.target postgresql.service
+
+[Service]
+# Ubuntu/Debian convention:
+Type=simple
+User=odoo
+Group=odoo
+ExecStart=/usr/bin/odoo --config=/etc/odoo/odoo.conf
+# Optionally, if you want to keep the logs:
+# StandardOutput=journal+console
+# StandardError=journal+console
+
+[Install]
+WantedBy=multi-user.target

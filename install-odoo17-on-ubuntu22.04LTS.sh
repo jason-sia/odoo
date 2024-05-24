@@ -20,8 +20,6 @@ sudo apt install -y odoo
 sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo.service -P /etc/systemd/system
 sudo systemctl daemon-reload
 sudo systemctl enable odoo
-sudo systemctl start odoo
-sudo systemctl status odoo
 
 
 #setup nginx
@@ -37,4 +35,6 @@ sudo nginx -t
 # run the servers
 sudo service nginx stop
 sudo service nginx start
+sudo systemctl start odoo
+sudo systemctl status odoo
 

@@ -6,8 +6,8 @@ sudo apt upgrade -y
 sudo apt install postgresql -y
 
 sudo apt install postgresql-server-dev-12 -y 
-sudo apt-get update --fix-missing
-sudo apt install postgresql-server-dev-12 -y
+#sudo apt-get update --fix-missing
+#sudo apt install postgresql-server-dev-12 -y
 
 sudo apt install build-essential -y
 sudo apt install python3-pillow -y
@@ -42,16 +42,6 @@ sudo nginx -t
 #sudo service nginx stop
 #sudo service nginx start
 
-#install Python 3.1
-sudo apt update
-sudo apt install -y software-properties-common
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt update
-sudo apt install -y python3.10 python3.10-venv python3.10-dev
-# link to python3
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
-
-
 # setup odoo config 
 sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo17.conf -P /etc
 
@@ -79,7 +69,8 @@ sudo runuser -l odoo17 -c 'git clone https://www.github.com/odoo/odoo --depth 1 
 #cd /opt/odoo17 
 #python3 -m venv odoo-venv
 sudo runuser -l odoo17 -c 'cd /opt/odoo17'
-sudo runuser -l odoo17 -c 'python3.10 -m venv odoo-venv'
+#sudo runuser -l odoo17 -c 'python3.10 -m venv odoo-venv'
+sudo runuser -l odoo17 -c 'python3 -m venv odoo-venv'
 
 #source odoo-venv/bin/activate
 sudo runuser -l odoo17 -c 'source /opt/odoo17/odoo-venv/bin/activate'
@@ -87,7 +78,8 @@ sudo runuser -l odoo17 -c 'source /opt/odoo17/odoo-venv/bin/activate'
 #pip3 install wheel 
 #pip3 install -r odoo/requirements.txt
 #sudo apt-get install python3-pypdf2 -y
-#sudo runuser -l odoo17 -c 'pip3 install python3-pypdf2'
+sudo runuser -l odoo17 -c 'pip3 install python3-pypdf2'
+
 sudo runuser -l odoo17 -c 'pip3 install wheel'
 #sudo runuser -l odoo17 -c 'cd /'
 sudo runuser -l odoo17 -c 'pip3 install -r /opt/odoo17/odoo/requirements.txt'
@@ -114,36 +106,48 @@ sudo mkdir /opt/odoo17/odoo-custom-addons
 #sudo runuser -l odoo17 -c './odoo-bin'
 #sudo runuser -l odoo17 -c '/opt/odoo17/odoo/odoo-bin'
 
+#install Python 3.1
+sudo apt update
+sudo apt install -y software-properties-common
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install -y python3.10 python3.10-venv python3.10-dev
+# link to python3
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
+python3 --version
+
+
+
 # run the servers
 sudo service nginx stop
 sudo service nginx start
 #sudo runuser -l odoo17 -c '/opt/odoo17/odoo/odoo-bin  -c /etc/odoo17.conf -d odoo_db' 
 
-sudo apt update
-sudo apt install -y software-properties-common
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt update
+#sudo apt update
+#sudo apt install -y software-properties-common
+#sudo add-apt-repository ppa:deadsnakes/ppa
+#sudo apt update
 
-sudo apt install -y python3.10
+#sudo apt install -y python3.10
 
 #link python
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
-python3 --version
+#sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
+#python3 --version
 
 #sudo runuser -l odoo17 -c 'pip3 install psycopg2-binary'
 
-sudo apt remove python3-pip -y
-sudo apt install python3-pip -y
+#sudo apt remove python3-pip -y
+#sudo apt install python3-pip -y
 
-sudo runuser -l odoo17 -c 'apt remove python3-pip -y'
+#sudo runuser -l odoo17 -c 'apt remove python3-pip -y'
 
-sudo runuser -l odoo17 -c 'pip3 install psycopg2-binary'
-
-
-sudo runuser -l odoo17 -c '/opt/odoo17/odoo/odoo-bin  -c /etc/odoo17.conf -d odoo_db' 
+#sudo runuser -l odoo17 -c 'pip3 install psycopg2-binary'
 
 
+#sudo runuser -l odoo17 -c '/opt/odoo17/odoo/odoo-bin  -c /etc/odoo17.conf -d odoo_db' 
 
-#sudo runuser -l odoo17 -c '/opt/odoo17/odoo/odoo-bin -d odoo_db --init=all --load-language=en_US --without-demo=all --db-filter=^odoo_db$ --save' 
+
+
+sudo runuser -l odoo17 -c '/opt/odoo17/odoo/odoo-bin -d odoo_db --init=all --load-language=en_US --without-demo=all --db-filter=^odoo_db$ --save' 
 
 #./odoo-bin -c /etc/odoo-server.conf

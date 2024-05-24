@@ -7,7 +7,11 @@ echo "deb http://nightly.odoo.com/14.0/nightly/deb/ ./" | sudo tee /etc/apt/sour
 sudo apt update
 sudo apt upgrade -y
 
-# create odoo service
+# create odoo service /etc/systemd/system/odoo.service
+sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo.service -P /etc/systemd/system
+#sudo systemctl daemon-reload
+#sudo systemctl enable --now odoo17
+#sudo systemctl status odoo17
 
 
 #setup nginx
@@ -25,11 +29,6 @@ sudo nginx -t
 # setup odoo config 
 #sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo17.conf -P /etc
 
-# create odoo service
-#sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo17.service -P /etc/systemd/system
-#sudo systemctl daemon-reload
-#sudo systemctl enable --now odoo17
-#sudo systemctl status odoo17
 
 # create user
 #sudo useradd -m -d /opt/odoo17 -U -r -s /bin/bash odoo17

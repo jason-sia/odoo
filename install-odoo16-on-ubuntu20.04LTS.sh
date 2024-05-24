@@ -76,7 +76,7 @@ sudo runuser -l odoo16 -c 'source /opt/odoo16/odoo-venv/bin/activate'
 sudo runuser -l odoo16 -c 'pip3 install wheel'
 sudo runuser -l odoo16 -c 'cd /'
 sudo runuser -l odoo16 -c 'pip3 install -r /opt/odoo16/odoo/requirements.txt'
-sudo runuser -l odoo16 -c 'pip install PyPDF2'
+sudo runuser -l odoo16 -c 'pip3 install PyPDF2'
 # sudo pip install PyPDF2
 
 #sudo runuser -l odoo16 -c 'mkdir /opt/odoo16/odoo-venv/log'

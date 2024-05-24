@@ -1,6 +1,17 @@
 #!/bin/sh
 # installing odoo env dev
+#sudo apt update
+#install Python 3.1
 sudo apt update
+sudo apt install -y software-properties-common
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install -y python3.10 python3.10-venv python3.10-dev
+# link to python3
+python3 --version
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
+python3 --version
+
 sudo apt upgrade -y
 
 sudo apt install postgresql -y
@@ -25,7 +36,7 @@ sudo apt install libxml2-dev -y
 sudo apt install python3-wheel -y 
 sudo apt install python3-venv -y
 sudo apt install libxslt1-dev -y
-sudo apt install nodeless -y
+#sudo apt install nodeless -y
 sudo apt install libjpeg-dev -y 
 sudo apt install postgresql -y
 sudo pg_ctlcluster 12 main start
@@ -63,7 +74,7 @@ sudo apt install ./wkhtmltox_0.12.5-1.focal_amd64.deb -y
 #git clone https://www.github.com/odoo/odoo --depth 1 --branch 17.0 /opt/odoo17/odoo
 sudo runuser -l odoo17 -c 'ls -l'
 sudo runuser -l odoo17 -c 'git clone https://www.github.com/odoo/odoo --depth 1 --branch 17.0 /opt/odoo17/odoo'
-
+### snapshot stops here
  
 # create virtual environment
 #cd /opt/odoo17 
@@ -78,7 +89,7 @@ sudo runuser -l odoo17 -c 'source /opt/odoo17/odoo-venv/bin/activate'
 #pip3 install wheel 
 #pip3 install -r odoo/requirements.txt
 #sudo apt-get install python3-pypdf2 -y
-sudo runuser -l odoo17 -c 'pip3 install python3-pypdf2'
+#sudo runuser -l odoo17 -c 'pip3 install python3-pypdf2'
 
 sudo runuser -l odoo17 -c 'pip3 install wheel'
 #sudo runuser -l odoo17 -c 'cd /'
@@ -105,16 +116,6 @@ sudo mkdir /opt/odoo17/odoo-custom-addons
 #sudo runuser -l odoo17 -c 'ls'
 #sudo runuser -l odoo17 -c './odoo-bin'
 #sudo runuser -l odoo17 -c '/opt/odoo17/odoo/odoo-bin'
-
-#install Python 3.1
-sudo apt update
-sudo apt install -y software-properties-common
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt update
-sudo apt install -y python3.10 python3.10-venv python3.10-dev
-# link to python3
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
-python3 --version
 
 
 

@@ -16,16 +16,16 @@ sudo chown -R ubuntu:ubuntu /home/ubuntu/.ssh
 
 sudo chmod 700 /home/ubuntu/.ssh
 
-sudo -u postgres createuser -d -R -S $USER
+#sudo -u postgres createuser -d -R -S $USER
 
 # create user
 sudo useradd -m -d /opt/odoo17 -U -r -s /bin/bash odoo17
 sudo su - postgres -c "createuser -s odoo17"
 
-#createdb $USER
+createdb $USER
 createdb odoo17
 
-cd odoo
+#cd odoo
 
 sudo /home/ubuntu/odoo/setup/debinstall.sh
 
@@ -63,7 +63,7 @@ sudo service nginx start
 #sudo systemctl start odoo
 #sudo systemctl status odoo
 
-#sudo python3 /home/ubuntu/odoo/odoo-bin --addons-path=/home/ubuntu/odoo/addons -d odoo -i base
+python3 /home/ubuntu/odoo/odoo-bin --addons-path=/home/ubuntu/odoo/addons -d odoo -i base
 #sudo /home/ubuntu/odoo/odoo-bin  -c /home/ubuntu/odoo/odoo17.conf -d odoo_db
-sudo runuser -l odoo17 -c '/home/ubuntu/odoo/odoo-bin  -c /home/ubuntu/odoo/odoo17.conf -d odoo_db' 
+#sudo runuser -l odoo17 -c '/home/ubuntu/odoo/odoo-bin  -c /home/ubuntu/odoo/odoo17.conf -d odoo_db' 
 

@@ -26,6 +26,9 @@ sudo /home/ubuntu/odoo/setup/debinstall.sh
 
 #python3 odoo-bin --addons-path=addons -d odoo -i base
 
+# setup odoo config 
+sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo17.conf -P /home/ubuntu/odoo
+
 
 # create odoo service /etc/systemd/system/odoo.service
 #sudo adduser --system --home=/opt/odoo --group odoo

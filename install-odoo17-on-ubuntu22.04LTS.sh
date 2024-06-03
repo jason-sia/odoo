@@ -1,36 +1,40 @@
 #!/bin/sh
-# installing odoo env 17
-sudo apt update
-sudo apt upgrade -y
+# installing odoo env 17 dev
+git clone https://github.com/odoo/odoo.git
 
-sudo apt install -y postgresql
-#pg_ctlcluster 12 main start
+python3 --version
 
-wget -O - https://nightly.odoo.com/odoo.key | sudo apt-key add -
-echo "deb http://nightly.odoo.com/17.0/nightly/deb/ ./" | sudo tee /etc/apt/sources.list.d/odoo.list
-sudo apt update
-sudo apt upgrade -y
+sudo apt-get update -y
 
-#install Python 3.1
-sudo apt update
-sudo apt install -y software-properties-common
-sudo add-apt-repository ppa:deadsnakes/ppa
-sudo apt update
-sudo apt install -y python3.10 python3.10-venv python3.10-dev
+sudo apt-get install python3-pip -y
 
-#install odoo
-sudo apt install -y odoo
-sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo17.conf -P /etc/odoo
-sudo mv /etc/odoo/odoo17.conf /etc/odoo/odoo.conf 
+pip3 --version
+
+sudo apt install postgresql postgresql-client -y
+
+sudo chown -R ubuntu:ubuntu /home/ubuntu/.ssh
+
+sudo chmod 700 /home/ubuntu/.ssh
+
+sudo -u postgres createuser -d -R -S $USER
+
+createdb $USER
+
+cd odoo
+
+sudo /home/ubuntu/odoo/setup/debinstall.sh
+
+#python3 odoo-bin --addons-path=addons -d odoo -i base
+
 
 # create odoo service /etc/systemd/system/odoo.service
 #sudo adduser --system --home=/opt/odoo --group odoo
 #sudo mkdir /etc/odoo
 #sudo chown -R odoo:odoo /opt/odoo /etc/odoo
 
-sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo.service -P /etc/systemd/system
-sudo systemctl daemon-reload
-sudo systemctl enable odoo
+#sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo.service -P /etc/systemd/system
+#sudo systemctl daemon-reload
+#sudo systemctl enable odoo
 
 
 #setup nginx
@@ -43,11 +47,13 @@ sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo.conf -P /et
 sudo ln -s /etc/nginx/sites-available/odoo.conf /etc/nginx/sites-enabled/odoo.conf
 sudo nginx -t
 
-sudo mkdir /opt/odoo/odoo-custom-addons
+sudo mkdir /home/ubuntu/odoo/odoo-custom-addons
 
 # run the servers
 sudo service nginx stop
 sudo service nginx start
-sudo systemctl start odoo
-sudo systemctl status odoo
+#sudo systemctl start odoo
+#sudo systemctl status odoo
+
+sudo python3 /home/ubuntu/odoo/odoo-bin --addons-path=/home/ubuntu/odoo/addons -d odoo -i base
 

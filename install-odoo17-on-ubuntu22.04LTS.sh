@@ -58,5 +58,5 @@ sudo service nginx start
 #sudo systemctl start odoo
 #sudo systemctl status odoo
 
-sudo python3 /home/ubuntu/odoo/odoo-bin --addons-path=/home/ubuntu/odoo/addons -d odoo -i base
-
+#sudo python3 /home/ubuntu/odoo/odoo-bin --addons-path=/home/ubuntu/odoo/addons -d odoo -i base
+sudo /home/ubuntu/odoo/odoo-bin  -c /home/ubuntu/odoo/odoo17.conf -d odoo_db' 

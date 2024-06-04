@@ -1,6 +1,6 @@
 #!/bin/sh
 # installing odoo env 17 dev
-git clone https://github.com/odoo/odoo.git
+sudo git clone https://github.com/odoo/odoo.git
 
 python3 --version
 
@@ -25,7 +25,7 @@ sudo su - postgres -c "createuser -s odoo17"
 createdb $USER
 createdb odoo17
 
-#cd odoo
+cd odoo
 
 sudo /home/ubuntu/odoo/setup/debinstall.sh
 

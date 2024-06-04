@@ -1,6 +1,6 @@
 #!/bin/sh
 # installing odoo env 17 dev
-sudo git clone https://github.com/odoo/odoo.git
+git clone https://github.com/odoo/odoo.git
 
 python3 --version
 

@@ -29,6 +29,13 @@ sudo -u postgres createuser -d -R -S $USER
 createdb $USER
 #createdb odoo17
 
+# install html to pdf converter
+#sudo wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.focal_amd64.deb
+#sudo apt install ./wkhtmltox_0.12.5-1.focal_amd64.deb -y
+sudo wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.focal_amd64.deb
+sudo apt install ./wkhtmltox_0.12.6-1.focal_amd64.deb -y
+
+
 cd odoo
 
 sudo /home/ubuntu/odoo/setup/debinstall.sh

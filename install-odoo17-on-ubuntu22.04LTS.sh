@@ -53,22 +53,21 @@ sudo /home/ubuntu/odoo/setup/debinstall.sh
 #sudo apt-get install python-pypdf2 -y
 #sudo apt-get install python3-pypdf2 -y
 
-#sudo apt install nginx -y 
-#sudo rm -rf /etc/nginx/sites-available/default
-#sudo rm -rf /etc/nginx/sites-enabled/default
-###sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo.conf -P /etc/nginx/sites-available
-#sudo ln -s /etc/nginx/sites-available/odoo.conf /etc/nginx/sites-enabled/odoo.conf
-#sudo nginx -t
+sudo apt install nginx -y 
+sudo rm -rf /etc/nginx/sites-available/default
+sudo rm -rf /etc/nginx/sites-enabled/default
+sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo.conf -P /etc/nginx/sites-available
+sudo ln -s /etc/nginx/sites-available/odoo.conf /etc/nginx/sites-enabled/odoo.conf
+sudo nginx -t
 
 #sudo mkdir /home/ubuntu/odoo/odoo-custom-addons
 
 # run the servers
-#sudo service nginx stop
-#sudo service nginx start
-##sudo systemctl start odoo
-##sudo systemctl status odoo
+sudo service nginx stop
+sudo service nginx start
+
+
+
 
 python3 /home/ubuntu/odoo/odoo-bin --addons-path=/home/ubuntu/odoo/addons -d odoo -i base
-#sudo /home/ubuntu/odoo/odoo-bin  -c /home/ubuntu/odoo/odoo17.conf -d odoo_db
-#sudo runuser -l odoo17 -c '/home/ubuntu/odoo/odoo-bin  -c /home/ubuntu/odoo/odoo17.conf -d odoo_db' 
 

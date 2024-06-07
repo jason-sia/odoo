@@ -60,7 +60,7 @@ sudo wget https://raw.githubusercontent.com/jason-sia/odoo/main/odoo.conf -P /et
 sudo ln -s /etc/nginx/sites-available/odoo.conf /etc/nginx/sites-enabled/odoo.conf
 sudo nginx -t
 
-sudo apt install python-gevent -y
+sudo apt install python3-gevent -y
 sudo mkdir /home/ubuntu/odoo/odoo-custom-addons
 
 # run the servers

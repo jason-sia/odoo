@@ -51,7 +51,7 @@ sudo /home/ubuntu/odoo/setup/debinstall.sh
 
 #setup nginx
 #sudo apt-get install python-pypdf2 -y
-#sudo apt-get install python3-pypdf2 -y
+sudo apt-get install python3-pypdf2 -y
 
 sudo apt install nginx -y 
 sudo rm -rf /etc/nginx/sites-available/default

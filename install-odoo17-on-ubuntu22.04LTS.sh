@@ -25,6 +25,7 @@ sudo chmod 700 /home/ubuntu/.ssh
 #sudo useradd -m -d /opt/odoo17 -U -r -s /bin/bash odoo17
 #sudo su - postgres -c "createuser -s odoo17"
 
+sudo -u postgres createuser -d -R -S $USER
 createdb $USER
 #createdb odoo17
 
